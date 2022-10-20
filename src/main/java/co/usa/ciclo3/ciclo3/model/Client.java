@@ -7,17 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="papeleria")
-public class Papeleria implements Serializable{
+@Table(name="client")
+public class Client implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private Integer price;
-    private String description;
-    
+    private Integer email;
+    private Integer age;
+
+
+
     public Integer getId() {
         return id;
     }
@@ -30,16 +31,16 @@ public class Papeleria implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-    public Integer getPrice() {
-        return price;
+    public Integer getEmail() {
+        return email;
     }
-    public void setPrice(Integer price) {
-        this.price = price;
+    public void setEmail(Integer email) {
+        this.email = email;
     }
-    public String getDescription() {
-        return description;
+    public Integer getAge() {
+        return age;
     }
-    public void setDescription(String description) {
-        this.description = description;
-    }   
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }

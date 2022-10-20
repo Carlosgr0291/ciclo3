@@ -13,31 +13,32 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
-import co.usa.ciclo3.ciclo3.model.Papeleria;
-import co.usa.ciclo3.ciclo3.service.PapeleriaService;
+import co.usa.ciclo3.ciclo3.model.Cabin;
+import co.usa.ciclo3.ciclo3.service.CabinService;
 
 @RestController
-@RequestMapping("/api/Papeleria")
+@RequestMapping("/api/Cabin")
 @CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class PapeleriaController {
+
+public class CabinController {
     
     @Autowired
-    private  PapeleriaService papeleriaService;
+    private  CabinService cabinService;
     
     @GetMapping("/all")
-    public List<Papeleria> getPapelerias(){
-        return papeleriaService.getAll();
+    public List<Cabin> getCabins(){
+        return cabinService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Papeleria> getPapeleria(@PathVariable("id") int id){
-        return papeleriaService.getPapeleria(id);
+    public Optional<Cabin> getCabin(@PathVariable("id") int id){
+        return cabinService.getCabin(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Papeleria save(@RequestBody Papeleria p){
-        return papeleriaService.save(p);
+    public Cabin save(@RequestBody Cabin p){
+        return cabinService.save(p);
     }
 }
 
