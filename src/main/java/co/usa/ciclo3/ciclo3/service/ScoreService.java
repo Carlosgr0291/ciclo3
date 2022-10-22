@@ -25,8 +25,8 @@ public class ScoreService {
         if(s.getIdScore()==null){
             return scoreRepository.save(s);
         }else{
-            Optional<Score> paux=scoreRepository.getScore(s.getIdScore());
-            if(paux.isEmpty()){
+            Optional<Score> saux=scoreRepository.getScore(s.getIdScore());
+            if(saux.isEmpty()){
                 return scoreRepository.save(s);
             }else{
                 return s;

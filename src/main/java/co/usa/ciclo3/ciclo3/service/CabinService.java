@@ -26,8 +26,8 @@ public class CabinService {
         if(c.getId()==null){
             return cabinRepository.save(c);
         }else{
-            Optional<Cabin> paux=cabinRepository.getCabin(c.getId());
-            if(paux.isEmpty()){
+            Optional<Cabin> caux=cabinRepository.getCabin(c.getId());
+            if(caux.isEmpty()){
                 return cabinRepository.save(c);
             }else{
                 return c;
