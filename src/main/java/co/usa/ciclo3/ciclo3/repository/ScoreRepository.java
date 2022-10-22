@@ -11,7 +11,7 @@ import java.util.Optional;
 public class ScoreRepository {
     
     @Autowired
-    private static ScoreCrudRepository scoreCrudRepository;
+    private ScoreCrudRepository scoreCrudRepository;
     
     public List <Score> getAll(){
         return (List<Score>) scoreCrudRepository.findAll();
