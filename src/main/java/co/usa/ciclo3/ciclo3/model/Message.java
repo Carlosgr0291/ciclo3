@@ -5,28 +5,67 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name="message")
 public class Message implements Serializable{
+   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String messagetext;
+    private Integer idMessage;
+    private String messageText;
 
+    @ManyToOne
+    @JoinColumn(name="cabinId")
+    @JsonIgnoreProperties(value = {"messages","reservations"})
+    private Cabin cabin;
 
-    public Integer getId() {
-        return id;
+    @ManyToOne
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties(value = {"messages","reservations"})
+    private Client client;
+
+    public Integer getIdMessage() {
+        return idMessage;
     }
-    public void setId(Integer id) {
-        this.id = id;
+
+    public void setIdMessage(Integer idMessage) {
+        this.idMessage = idMessage;
     }
-    public String getMessagetext() {
-        return messagetext;
+
+    public String getMessageText() {
+        return messageText;
     }
-    public void setMessagetext(String messagetext) {
-        this.messagetext = messagetext;
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
     }
+
+    public Cabin getCabin() {
+        return cabin;
+    }
+
+    public void setCabin(Cabin cabin) {
+        this.cabin = cabin;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Object getId() {
+        return null;
+    }
+     
 }
 

@@ -5,5 +5,5 @@ import co.usa.ciclo3.ciclo3.model.Message;
 
 
 public interface MessageCrudRepository extends CrudRepository<Message,Integer>{
-    
+
 }

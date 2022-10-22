@@ -15,31 +15,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.usa.ciclo3.ciclo3.model.Message;
-import co.usa.ciclo3.ciclo3.service.MessageService;
+import co.usa.ciclo3.ciclo3.model.Reservation;
+import co.usa.ciclo3.ciclo3.service.ReservationService;
 
 @RestController
-@RequestMapping("/api/Message")
+@RequestMapping("/api/Reservation")
 @CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 
-public class MessageController {
+public class ReservationController {
     
     @Autowired
-    private  MessageService messageService;
+    private  ReservationService reservationService;
     
     @GetMapping("/all")
-    public List<Message> getMessages(){
-        return messageService.getAll();
+    public List<Reservation> getReservations(){
+        return reservationService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Message> getMessage(@PathVariable("id") int id){
-        return messageService.getMessage(id);
+    public Optional<Reservation> getReservacion(@PathVariable("id") int id){
+        return reservationService.get(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Message save(@RequestBody Message m){
-        return messageService.save(m);
+    public Reservation save(@RequestBody Reservation r){
+        return reservationService.save(r);
     }
 }
+

@@ -37,8 +37,8 @@ public class CabinController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Cabin save(@RequestBody Cabin p){
-        return cabinService.save(p);
+    public Cabin save(@RequestBody Cabin c){
+        return cabinService.save(c);
     }
 }
 

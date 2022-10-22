@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @Repository
 public class CabinRepository {
+    
     @Autowired
     private CabinCrudRepository cabinCrudRepository;
     
@@ -20,7 +21,7 @@ public class CabinRepository {
         return cabinCrudRepository.findById(id);
     } 
 
-    public Cabin save(Cabin p){
-        return cabinCrudRepository.save(p);
+    public Cabin save(Cabin c){
+        return cabinCrudRepository.save(c);
     }
 }

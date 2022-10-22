@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @Repository
 public class ClientRepository {
+    
     @Autowired
     private ClientCrudRepository clientCrudRepository;
     

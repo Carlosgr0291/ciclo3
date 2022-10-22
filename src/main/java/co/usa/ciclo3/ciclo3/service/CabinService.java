@@ -22,15 +22,15 @@ public class CabinService {
         return cabinRepository.getCabin(id);
     }
 
-    public Cabin save(Cabin p){
-        if(p.getId()==null){
-            return cabinRepository.save(p);
+    public Cabin save(Cabin c){
+        if(c.getId()==null){
+            return cabinRepository.save(c);
         }else{
-            Optional<Cabin> paux=cabinRepository.getCabin(p.getId());
+            Optional<Cabin> paux=cabinRepository.getCabin(c.getId());
             if(paux.isEmpty()){
-                return cabinRepository.save(p);
+                return cabinRepository.save(c);
             }else{
-                return p;
+                return c;
             }
         }
     }
