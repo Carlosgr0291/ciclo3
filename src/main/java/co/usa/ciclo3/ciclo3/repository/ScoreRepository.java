@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import co.usa.ciclo3.ciclo3.model.Score;
 import co.usa.ciclo3.ciclo3.repository.crud.ScoreCrudRepository;
-
 import java.util.Optional;
 
 @Repository

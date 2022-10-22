@@ -21,15 +21,15 @@ public class ScoreService {
         return scoreRepository.getScore(id);
     }
 
-    public Score save(Score c){
-        if(c.getIdScore()==null){
-            return scoreRepository.save(c);
+    public Score save(Score s){
+        if(s.getIdScore()==null){
+            return scoreRepository.save(s);
         }else{
-            Optional<Score> paux=scoreRepository.getScore(c.getIdScore());
+            Optional<Score> paux=scoreRepository.getScore(s.getIdScore());
             if(paux.isEmpty()){
-                return scoreRepository.save(c);
+                return scoreRepository.save(s);
             }else{
-                return c;
+                return s;
             }
         }
     }

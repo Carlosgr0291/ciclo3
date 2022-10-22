@@ -21,15 +21,15 @@ public class ReservationService {
         return reservationRepository.getReservation(id);
     }
 
-    public Reservation save(Reservation c){
-        if(c.getId()==null){
-            return reservationRepository.save(c);
+    public Reservation save(Reservation r){
+        if(r.getId()==null){
+            return reservationRepository.save(r);
         }else{
-            Optional<Reservation> paux=reservationRepository.getReservation(c.getIdReservation());
+            Optional<Reservation> paux=reservationRepository.getReservation(r.getIdReservation());
             if(paux.isEmpty()){
-                return reservationRepository.save(c);
+                return reservationRepository.save(r);
             }else{
-                return c;
+                return r;
             }
         }
     }
