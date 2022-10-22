@@ -23,7 +23,7 @@ import co.usa.ciclo3.ciclo3.service.CabinService;
 public class CabinController {
     
     @Autowired
-    private  CabinService cabinService;
+    private CabinService cabinService;
     
     @GetMapping("/all")
     public List<Cabin> getCabin(){

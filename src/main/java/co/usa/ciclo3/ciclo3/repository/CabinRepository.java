@@ -8,7 +8,7 @@ import co.usa.ciclo3.ciclo3.repository.crud.CabinCrudRepository;
 import java.util.Optional;
 
 @Repository
-public class CabinRepository {
+public class CabinRepository  {
     
     @Autowired
     private CabinCrudRepository cabinCrudRepository;

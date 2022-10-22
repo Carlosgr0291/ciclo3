@@ -1,6 +1,7 @@
 package co.usa.ciclo3.ciclo3.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -22,9 +23,9 @@ public class Reservation implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
-    private String starDate;
-    private Integer devolutionDate;
-    private Integer status;
+    private Date starDate;
+    private Date devolutionDate;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name="cabinId")
@@ -32,8 +33,8 @@ public class Reservation implements Serializable{
     private Cabin cabin;
 
     @ManyToOne
-    @JoinColumn(name="clientId")
-    @JsonIgnoreProperties(value = {"reservations","messages"})
+    @JoinColumn(name="client")
+    @JsonIgnoreProperties(value = {"reservation","message"})
     private Client client;
 
     @OneToOne(cascade = {CascadeType.REMOVE},mappedBy = "reservation" )
@@ -48,27 +49,27 @@ public class Reservation implements Serializable{
         this.idReservation = idReservation;
     }
 
-    public String getStarDate() {
+    public Date getStarDate() {
         return starDate;
     }
 
-    public void setStarDate(String starDate) {
+    public void setStarDate(Date starDate) {
         this.starDate = starDate;
     }
 
-    public Integer getDevolutionDate() {
+    public Date getDevolutionDate() {
         return devolutionDate;
     }
 
-    public void setDevolutionDate(Integer devolutionDate) {
+    public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -96,9 +97,5 @@ public class Reservation implements Serializable{
         this.score = score;
     }
 
-    public Object getId() {
-        return null;
-    }
-
-    
+      
 }

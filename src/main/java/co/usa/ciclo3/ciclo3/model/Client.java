@@ -19,18 +19,18 @@ public class Client implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idClient;
-    private String name;
-    private Integer email;
-    private Integer age;
+    private String email;
     private String password;
+    private String namme;
+    private Integer age;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
     @JsonIgnoreProperties(value = "client")
-    public List<Message> messages;
+    private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
     @JsonIgnoreProperties(value = {"client"})
-    public List<Reservation> reservations;
+    private List<Reservation> reservation;
 
     public Integer getIdClient() {
         return idClient;
@@ -40,28 +40,12 @@ public class Client implements Serializable{
         this.idClient = idClient;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(Integer email) {
+    public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
     }
 
     public String getPassword() {
@@ -72,6 +56,22 @@ public class Client implements Serializable{
         this.password = password;
     }
 
+    public String getNamme() {
+        return namme;
+    }
+
+    public void setNamme(String namme) {
+        this.namme = namme;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     public List<Message> getMessages() {
         return messages;
     }
@@ -80,14 +80,13 @@ public class Client implements Serializable{
         this.messages = messages;
     }
 
-    public List<Reservation> getReservations() {
-        return reservations;
+    public List<Reservation> getReservation() {
+        return reservation;
     }
 
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
+    public void setReservation(List<Reservation> reservation) {
+        this.reservation = reservation;
     }
 
-    
-    
+      
 }
