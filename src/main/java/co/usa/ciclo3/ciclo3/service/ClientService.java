@@ -22,15 +22,15 @@ public class ClientService {
         return clientRepository.getClient(id);
     }
 
-    public Client save(Client c){
-        if(c.getIdClient()==null){
-            return clientRepository.save(c);
+    public Client save(Client p){
+        if(p.getIdClient()==null){
+            return clientRepository.save(p);
         }else{
-            Optional<Client> paux=clientRepository.getClient(c.getIdClient());
+            Optional<Client> paux=clientRepository.getClient(p.getIdClient());
             if(paux.isEmpty()){
-                return clientRepository.save(c);
+                return clientRepository.save(p);
             }else{
-                return c;
+                return p;
             }
         }
     }

@@ -17,12 +17,12 @@ public class ReservationService {
         return reservationRepository.getAll();
     }
 
-    public Optional <Reservation> get(int id){
+    public Optional <Reservation> getReservation(int id){
         return reservationRepository.getReservation(id);
     }
 
     public Reservation save(Reservation r){
-        if(r.getId()==null){
+        if(r.getIdReservation()==null){
             return reservationRepository.save(r);
         }else{
             Optional<Reservation> paux=reservationRepository.getReservation(r.getIdReservation());

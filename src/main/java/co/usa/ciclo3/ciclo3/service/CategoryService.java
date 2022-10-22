@@ -21,15 +21,15 @@ public class CategoryService {
         return categoryRepository.getCategory(id);
     }
 
-    public Category save(Category c){
-        if(c.getId()==null){
-            return categoryRepository.save(c);
+    public Category save(Category x){
+        if(x.getId()==null){
+            return categoryRepository.save(x);
         }else{
-            Optional<Category> paux=categoryRepository.getCategory(c.getId());
+            Optional<Category> paux=categoryRepository.getCategory(x.getId());
             if(paux.isEmpty()){
-                return categoryRepository.save(c);
+                return categoryRepository.save(x);
             }else{
-                return c;
+                return x;
             }
         }
     }

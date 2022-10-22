@@ -28,7 +28,7 @@ public class MessageController {
     private  MessageService messageService;
     
     @GetMapping("/all")
-    public List<Message> getMessages(){
+    public List<Message> getMessage(){
         return messageService.getAll();
     }
 

@@ -32,7 +32,7 @@ public class ScoreController {
 
     @GetMapping("/{id}")
     public Optional<Score> getScore(@PathVariable("id") int id){
-        return scoreService.get(id);
+        return scoreService.getScore(id);
     }
 
     @PostMapping("/save")

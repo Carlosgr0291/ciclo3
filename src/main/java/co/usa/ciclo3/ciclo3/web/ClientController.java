@@ -27,7 +27,7 @@ public class ClientController {
     private  ClientService clientService;
     
     @GetMapping("/all")
-    public List<Client> getClients(){
+    public List<Client> getClient(){
         return clientService.getAll();
     }
 
@@ -38,7 +38,7 @@ public class ClientController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Client save(@RequestBody Client c){
-        return clientService.save(c);
+    public Client save(@RequestBody Client p){
+        return clientService.save(p);
     }
 }

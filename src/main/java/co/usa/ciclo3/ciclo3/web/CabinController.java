@@ -26,7 +26,7 @@ public class CabinController {
     private  CabinService cabinService;
     
     @GetMapping("/all")
-    public List<Cabin> getCabins(){
+    public List<Cabin> getCabin(){
         return cabinService.getAll();
     }
 

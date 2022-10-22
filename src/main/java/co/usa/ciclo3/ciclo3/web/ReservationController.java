@@ -28,13 +28,13 @@ public class ReservationController {
     private  ReservationService reservationService;
     
     @GetMapping("/all")
-    public List<Reservation> getReservations(){
+    public List<Reservation> getReservation(){
         return reservationService.getAll();
     }
 
     @GetMapping("/{id}")
     public Optional<Reservation> getReservacion(@PathVariable("id") int id){
-        return reservationService.get(id);
+        return reservationService.getReservation(id);
     }
 
     @PostMapping("/save")
