@@ -2,9 +2,6 @@ package co.usa.ciclo3.ciclo3.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
-
 import co.usa.ciclo3.ciclo3.model.Cabin;
 import co.usa.ciclo3.ciclo3.repository.CabinRepository;
 import java.util.List;
