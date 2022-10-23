@@ -26,7 +26,7 @@ public class CategoryService {
             return categoryRepository.save(x);
         }else{
             Optional<Category> xaux=categoryRepository.getCategory(x.getId());
-            if(xaux.isEmpty()){
+            if(xaux.isPresent()){
                 return categoryRepository.save(x);
             }else{
                 return x;

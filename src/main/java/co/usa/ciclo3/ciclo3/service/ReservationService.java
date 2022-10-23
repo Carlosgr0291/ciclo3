@@ -26,7 +26,7 @@ public class ReservationService {
             return reservationRepository.save(r);
         }else{
             Optional<Reservation> raux=reservationRepository.getReservation(r.getIdReservation());
-            if(raux.isEmpty()){
+            if(raux.isPresent()){
                 return reservationRepository.save(r);
             }else{
                 return r;
